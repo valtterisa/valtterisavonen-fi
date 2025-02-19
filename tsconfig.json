@@ -1,12 +1,12 @@
 {
   "compilerOptions": {
     "target": "ES2019",
-    "module": "ESNext",                    
-    "moduleResolution": "node",            
-    "outDir": "./.valzu",         
-    "rootDir": "./template",           
-    "declaration": true,                   
-    "jsx": "react-jsx",           
+    "module": "ESNext",
+    "moduleResolution": "node",
+    "outDir": "./.valzu",
+    "rootDir": "./",
+    "declaration": true,
+    "jsx": "react-jsx",
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
     "strict": true,
@@ -14,9 +14,3 @@
   },
   "include": ["src", "pages"]
 }
-
-// Selvitä miksi client.js ei lataa
-// selvitä outDir ./valzu
-// hot reloading ei toimi
-// ei pysty suorittamaan js
-// seo joka sivulle? miten?
