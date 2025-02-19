@@ -1,0 +1,67 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Geist", serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  font-weight: 300;
+}
+
+body {
+  background-color: #000;
+  color: #fff;
+  line-height: 1.6;
+  height: 100%;
+}
+
+#app {
+  height: 100%;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+
+.title {
+  margin-bottom: 1rem;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  max-width: 15rem;
+  width: 100%;
+}
+
+.personal-links {
+  display: flex;
+  flex-direction: column;
+  margin-top: 2rem;
+}
+
+.link-icon {
+  display: flex;
+  align-items: center;
+}
+
+a {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #555555;
+  width: 100%;
+
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+a:hover {
+  color: #fff;
+}
