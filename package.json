@@ -1,0 +1,32 @@
+{
+  "name": "my-valzu-app",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "build:pages": "esbuild pages/index.ts --bundle --minify --outfile=.valzu/pages/index.js --platform=node --format=esm",
+    "build:server": "esbuild src/server.ts --bundle --minify --outfile=.valzu/server.js --platform=node --format=esm --external:fs --external:path --external:url --external:os",
+    "build:client": "esbuild src/client.tsx --bundle --minify --outfile=.valzu/client.js --format=esm --platform=browser --external:fs --external:path --external:net --external:http --external:events --external:url --external:querystring --external:zlib --external:crypto --external:stream --external:util",
+    "build": "npm run build:server && npm run build:client && npm run build:pages",
+    "start": "node .valzu/server.js",
+    "dev:client": "esbuild src/client.tsx --bundle --minify --outfile=.valzu/client.js --format=esm --platform=browser --external:fs --external:path --external:net --external:http --external:events --external:url --external:querystring --external:zlib --external:crypto --external:stream --external:util --watch",
+    "dev:server": "nodemon",
+    "dev": "concurrently \"npm run dev:client\" \"npm run dev:server\""
+  },
+  "files": [
+    ".valzu",
+    "pages",
+    "public",
+    "README.md",
+    "LICENSE"
+  ],
+  "dependencies": {
+    "valzu-core": "^1.0.20"
+  },
+  "devDependencies": {
+    "concurrently": "^7.6.0",
+    "esbuild": "^0.15.0",
+    "nodemon": "^2.0.22",
+    "ts-node": "^10.9.1",
+    "typescript": "^4.8.4"
+  }
+}
