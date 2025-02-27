@@ -27,5 +27,4 @@ jobs:
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          # Change this to the folder containing your built site.
-          publish_dir: .valzu
+          
