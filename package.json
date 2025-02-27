@@ -20,7 +20,7 @@
     "LICENSE"
   ],
   "dependencies": {
-    "valzu-core": "^1.0.21"
+    "valzu-core": "^1.0.23"
   },
   "devDependencies": {
     "concurrently": "^7.6.0",
