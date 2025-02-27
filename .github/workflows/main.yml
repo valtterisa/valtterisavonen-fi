@@ -22,9 +22,20 @@ jobs:
 
       - name: Build Site
         run: npm run build
+        # Ensure that your build command outputs the necessary files.
+        # For example, if it outputs to a folder like ".valzu", that folder will be copied below.
+
+      - name: Prepare Deploy Directory
+        run: |
+          mkdir deploy
+          # Copy the entire repository to the deploy folder,
+          # excluding .git, node_modules, and the deploy folder itself.
+          rsync -av --exclude='.git*' --exclude='node_modules' --exclude='deploy' . deploy
+          # Create a .nojekyll file so that GitHub Pages won’t process your files with Jekyll.
+          touch deploy/.nojekyll
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          
+          publish_dir: deploy
